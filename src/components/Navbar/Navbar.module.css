@@ -1,0 +1,33 @@
+.container {
+  grid-area: navbar;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: grid;
+  place-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container_1 {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav_link {
+  color: #000000e0;
+}
+
+.active_nav_link {
+  color: #1677ff;
+}
