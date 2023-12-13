@@ -28,7 +28,10 @@
 }
 
 .input_controller input {
-  width: 300px;
+}
+
+.login_link {
+  color: #1677ff;
 }
 
 .validation_error {

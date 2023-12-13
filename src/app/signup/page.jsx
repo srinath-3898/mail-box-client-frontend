@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { LoadingOutlined } from "@ant-design/icons";
 import { message } from "antd";
 import { signup } from "@/store/auth/authActions";
+import Link from "next/link";
+import { setError, setMessage } from "@/store/auth/authSlice";
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -102,6 +104,8 @@ const Signup = () => {
         type: authMessage ? "success" : "error",
         content: authMessage ? authMessage : error,
       });
+      dispatch(setMessage(null));
+      dispatch(setError(null));
     }
   }, [authMessage, error]);
 
@@ -198,9 +202,16 @@ const Signup = () => {
               {loading ? (
                 <LoadingOutlined style={{ color: "white", fontSize: 15 }} />
               ) : (
-                "Submit"
+                "Signup"
               )}
             </button>
+            <span>
+              Already have an account?{" "}
+              <Link href={"/login"} className={styles.login_link}>
+                Login
+              </Link>{" "}
+              to continue
+            </span>
           </form>
         </div>
       </div>

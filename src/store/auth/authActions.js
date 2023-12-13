@@ -12,3 +12,15 @@ export const signup = createAsyncThunk(
     }
   }
 );
+
+export const login = createAsyncThunk(
+  "auth/login",
+  async (userDetails, { rejectWithValue }) => {
+    try {
+      const response = await api.post("/user/login", userDetails);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);

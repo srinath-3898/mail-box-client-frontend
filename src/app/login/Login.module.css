@@ -1,0 +1,39 @@
+.container {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.content {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 40px;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input_controller {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input_controller input {
+}
+
+.login_link {
+  color: #1677ff;
+}
+
+.validation_error {
+  color: red;
+}
