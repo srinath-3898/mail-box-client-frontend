@@ -7,7 +7,6 @@ import { LogoutOutlined, MailOutlined } from "@ant-design/icons";
 import { Tooltip } from "antd";
 
 const Navbar = () => {
-  const router = useRouter();
   const pathnames = usePathname()
     .split("/")
     .filter((x) => x);

@@ -1,2 +1,92 @@
 .container {
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+  display: grid;
+  gap: 16px;
+}
+
+.send_to,
+.subject {
+  display: grid;
+  gap: 5%;
+  grid-template-columns: 15% 80%;
+  align-items: center;
+}
+
+.send_to input,
+.subject input {
+  width: 100%;
+  border: none;
+  padding: 16px 6px;
+  border-bottom: 1px solid #cccccc;
+  border-radius: 0px;
+}
+
+.send_to {
+  position: relative;
+}
+
+.subject input:focus-visible {
+  border-bottom: 1px solid #1677ff;
+}
+
+.editor {
+  height: 50vh;
+}
+
+.send_btn {
+  margin-top: 40px;
+}
+
+.users_loading {
+}
+
+.users {
+  position: absolute;
+  display: grid;
+  top: 60px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 12px;
+  width: 80%;
+  left: 145px;
+  z-index: 1000;
+}
+
+.user {
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.no_users,
+.users_loading {
+  position: absolute;
+  top: 60px;
+  left: 145px;
+  width: 80%;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 12px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.user:hover {
+  background-color: #1677ff11;
+}
+
+.selected_user {
+  display: flex;
+  gap: 12px;
+  position: absolute;
+  top: 0px;
+  left: 145px;
+  background-color: #1677ff11;
+  padding: 12px;
+  border-radius: 50px;
 }

@@ -1,8 +1,12 @@
 import React from "react";
-import styles from "./Loading.module.css";
+import Loader from "@/components/Loader/Loader";
 
 const Loading = () => {
-  return <div>Loading</div>;
+  return (
+    <div style={{ height: "100%" }}>
+      <Loader size={50} />
+    </div>
+  );
 };
 
 export default Loading;

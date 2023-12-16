@@ -44,3 +44,8 @@ button {
   font-size: 16px;
   outline: none;
 }
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
