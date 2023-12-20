@@ -198,7 +198,7 @@ const Signup = () => {
             ) : (
               <></>
             )}
-            <button type="submit">
+            <button type="submit" disabled={loading}>
               {loading ? (
                 <LoadingOutlined style={{ color: "white", fontSize: 15 }} />
               ) : (

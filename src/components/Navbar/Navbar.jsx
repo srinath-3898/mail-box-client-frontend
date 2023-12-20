@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-import { usePathname, useRouter } from "next/navigation";
-import { LogoutOutlined, MailOutlined } from "@ant-design/icons";
+import { usePathname } from "next/navigation";
+import {
+  InboxOutlined,
+  LoginOutlined,
+  UserAddOutlined,
+} from "@ant-design/icons";
 import { Tooltip } from "antd";
 
-const Navbar = () => {
+const Navbar = ({ setComposeMailModalOpen }) => {
   const pathnames = usePathname()
     .split("/")
     .filter((x) => x);
@@ -15,76 +19,67 @@ const Navbar = () => {
 
   const [pathname, setPathname] = useState("");
 
-  const handleLogout = () => {};
-
   useEffect(() => {
     if (pathnames.length > 0) {
       setPathname(pathnames[0]);
     } else {
-      setPathname("home");
+      setPathname("inbox");
     }
   }, [pathnames]);
 
   return (
     <div className={styles.container}>
-      <div className={styles.container_1}>
-        {token ? (
-          <Link href={"/"}>
-            <MailOutlined
+      {token ? (
+        <>
+          <button
+            className={styles.compose_btn}
+            onClick={() => setComposeMailModalOpen(true)}
+          >
+            Compose
+          </button>
+          <Link
+            href={"/"}
+            className={`${styles.nav_link} ${
+              pathname === "inbox" ? styles.active_nav_link : ""
+            }`}
+          >
+            <InboxOutlined
               style={{
-                fontSize: 24,
-                color: "#1677ff",
+                fontSize: "24px",
               }}
             />
+            Inbox
           </Link>
-        ) : (
-          <MailOutlined
-            style={{
-              fontSize: 24,
-              color: "#1677ff",
-            }}
-          />
-        )}
-        <div className={styles.nav_links}>
-          {token ? (
-            <>
-              <Link
-                href={"/"}
-                className={`${styles.nav_link} ${
-                  pathname === "home" ? styles.active_nav_link : ""
-                }`}
-              >
-                Home
-              </Link>
-              <Tooltip title="Logout">
-                <LogoutOutlined
-                  style={{ fontSize: 20 }}
-                  onClick={handleLogout}
-                />
-              </Tooltip>
-            </>
-          ) : (
-            <>
-              <Link
-                href={"/login"}
-                className={`${styles.nav_link} ${
-                  pathname === "login" ? styles.active_nav_link : ""
-                }`}
-              >
-                Login
-              </Link>
-              <Link
-                href={"/signup"}
-                className={`${styles.nav_link} ${
-                  pathname === "signup" ? styles.active_nav_link : ""
-                }`}
-              >
-                Singup
-              </Link>
-            </>
-          )}
-        </div>
-      </div>
+        </>
+      ) : (
+        <>
+          <Tooltip title="Login">
+            <Link href={"/login"}>
+              <LoginOutlined
+                style={{
+                  color: pathname === "login" ? "#1677ff" : "initial",
+                  fontSize: 20,
+                }}
+              />
+            </Link>
+          </Tooltip>
+          <Link
+            href={"/signup"}
+            className={`${styles.nav_link} ${
+              pathname === "signup" ? styles.active_nav_link : ""
+            }`}
+          >
+            <Tooltip title="Signup" placement="right">
+              <UserAddOutlined
+                style={{
+                  color: pathname === "signup" ? "#1677ff" : "initial",
+                  fontSize: 20,
+                }}
+              />
+            </Tooltip>
+          </Link>
+        </>
+      )}
     </div>
   );
 };

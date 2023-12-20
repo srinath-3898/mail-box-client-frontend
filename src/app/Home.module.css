@@ -1,92 +1,48 @@
 .container {
-  padding: 20px;
-  width: 50%;
-  margin: auto;
   display: grid;
-  gap: 16px;
+  grid-template-rows: 60px 5fr;
 }
 
-.send_to,
-.subject {
-  display: grid;
-  gap: 5%;
-  grid-template-columns: 15% 80%;
-  align-items: center;
-}
-
-.send_to input,
-.subject input {
-  width: 100%;
-  border: none;
-  padding: 16px 6px;
+.container_1 {
   border-bottom: 1px solid #cccccc;
-  border-radius: 0px;
 }
 
-.send_to {
-  position: relative;
+.container_2 {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.subject input:focus-visible {
-  border-bottom: 1px solid #1677ff;
-}
-
-.editor {
-  height: 50vh;
-}
-
-.send_btn {
-  margin-top: 40px;
-}
-
-.users_loading {
-}
-
-.users {
-  position: absolute;
+.mail {
   display: grid;
-  top: 60px;
-  background-color: white;
-  border: 1px solid #cccccc;
-  border-radius: 8px;
-  padding: 12px;
-  width: 80%;
-  left: 145px;
-  z-index: 1000;
-}
-
-.user {
+  align-items: center;
+  grid-template-columns: 0.5fr 2fr 5fr 1fr;
+  gap: 40px;
+  padding: 8px;
+  border-bottom: 1px solid #cccccc;
   cursor: pointer;
-  padding: 12px;
+}
+
+.mail:hover {
+  background-color: #eaeaea;
+  border: none;
   border-radius: 8px;
 }
 
-.no_users,
-.users_loading {
-  position: absolute;
-  top: 60px;
-  left: 145px;
-  width: 80%;
-  background-color: white;
-  border: 1px solid #cccccc;
-  border-radius: 8px;
-  padding: 12px;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
+.mail_un_read {
+  font-weight: bold;
 }
 
-.user:hover {
-  background-color: #1677ff11;
+.sender_name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.selected_user {
-  display: flex;
-  gap: 12px;
-  position: absolute;
-  top: 0px;
-  left: 145px;
-  background-color: #1677ff11;
-  padding: 12px;
-  border-radius: 50px;
+.circle {
+  height: 10px;
+  width: 10px;
+  background-color: #1677ff;
+  border-radius: 50%;
 }

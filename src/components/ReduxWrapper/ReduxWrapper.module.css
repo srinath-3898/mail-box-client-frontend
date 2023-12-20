@@ -1,11 +1,23 @@
 .container {
+  position: relative;
   display: grid;
-  grid-template-areas: "navbar" "main" "footer";
-  grid-template-rows: 60px 10fr 60px;
+  grid-template-areas:
+    "header header"
+    "navbar main";
+  grid-template-rows: 60px 91vh;
+  grid-template-columns: 200px 10fr;
 }
 
 .main {
   z-index: 1;
   grid-area: main;
-  min-height: 83vh;
+}
+
+.main_res {
+  height: 100vh;
+}
+
+.compose_email {
+  position: absolute;
+  bottom: 0px;
 }

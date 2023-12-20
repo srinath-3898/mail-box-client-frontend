@@ -1,0 +1,4 @@
+.container {
+  grid-area: header;
+  background-color: #9992ff;
+}

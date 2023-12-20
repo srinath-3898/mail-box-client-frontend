@@ -2,32 +2,27 @@
   grid-area: navbar;
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display: grid;
-  place-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
 }
 
-.container_1 {
-  width: 60%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav_links {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.compose_btn {
+  width: 100%;
 }
 
 .nav_link {
+  width: 100%;
+  padding: 12px;
   color: #000000e0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .active_nav_link {
-  color: #1677ff;
+  background-color: #1677ff33;
+  border-radius: 8px;
 }
